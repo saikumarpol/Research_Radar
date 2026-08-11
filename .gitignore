@@ -1,0 +1,22 @@
+cat > .gitignore <<'EOF'
+# Environment / secrets
+backend/.env
+frontend/.env.local
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Node
+node_modules/
+.next/
+
+# Docker
+*.log
+
+# macOS
+.DS_Store
+EOF

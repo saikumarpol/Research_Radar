@@ -1,0 +1,15 @@
+.git
+.gitignore
+
+frontend/node_modules
+frontend/.next
+
+backend/__pycache__
+backend/**/*.pyc
+backend/.pytest_cache
+
+.env
+.env.*
+*.log
+
+.DS_Store
