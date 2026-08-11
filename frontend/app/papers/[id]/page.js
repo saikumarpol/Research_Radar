@@ -275,13 +275,11 @@ export default function PaperPage() {
 
         </div>
 
-
         {/* ===================================================
             3 COLUMN LAYOUT
         =================================================== */}
 
         <div className="grid items-start gap-5 lg:grid-cols-12">
-
 
           {/* =================================================
               LEFT COLUMN
@@ -318,7 +316,6 @@ export default function PaperPage() {
 
               </div>
 
-
               {/* Metadata */}
 
               <div className="divide-y divide-slate-100">
@@ -351,7 +348,6 @@ export default function PaperPage() {
 
               </div>
 
-
               {/* Authors */}
 
               <div className="border-t border-slate-200 px-5 py-5">
@@ -376,7 +372,6 @@ export default function PaperPage() {
                   </div>
 
                 </div>
-
 
                 <div className="mt-4 space-y-2">
 
@@ -405,7 +400,6 @@ export default function PaperPage() {
 
               </div>
 
-
               {/* Topics */}
 
               <div className="border-t border-slate-200 px-5 py-5">
@@ -427,7 +421,6 @@ export default function PaperPage() {
                   </div>
 
                 </div>
-
 
                 <div className="mt-4 flex flex-wrap gap-1.5">
 
@@ -453,7 +446,6 @@ export default function PaperPage() {
                 </div>
 
               </div>
-
 
               {/* DOI */}
 
@@ -492,7 +484,6 @@ export default function PaperPage() {
 
                 </div>
 
-
                 {doiUrl ? (
 
                   <a
@@ -520,10 +511,7 @@ export default function PaperPage() {
 
               </div>
 
-
-              {/* =================================================
-                  SHARE
-              ================================================= */}
+              {/* SHARE */}
 
               <div className="border-t border-slate-200 px-5 py-5">
 
@@ -536,6 +524,7 @@ export default function PaperPage() {
                   {shared ? (
                     <>
                       <Check className="h-4 w-4" />
+
                       {navigator?.share
                         ? "Shared"
                         : "Link Copied"}
@@ -554,7 +543,6 @@ export default function PaperPage() {
             </div>
 
           </aside>
-
 
           {/* =================================================
               CENTER COLUMN
@@ -577,11 +565,9 @@ export default function PaperPage() {
 
                 </div>
 
-
                 <h1 className="mt-5 text-2xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-3xl">
                   {title}
                 </h1>
-
 
                 {/* Compact metadata */}
 
@@ -602,7 +588,6 @@ export default function PaperPage() {
                 </div>
 
               </div>
-
 
               {/* Abstract */}
 
@@ -627,7 +612,6 @@ export default function PaperPage() {
                   </div>
 
                 </div>
-
 
                 <div className="border-t border-slate-100 p-5 sm:p-7">
 
@@ -662,17 +646,15 @@ export default function PaperPage() {
 
             </div>
 
-
-            {/* Mobile AI */}
+            {/* =================================================
+                MOBILE AI
+            ================================================= */}
 
             <div className="mt-5 lg:hidden">
-
               <AIMobile
                 paperId={paper.id}
               />
-
             </div>
-
 
             {/* Bottom note */}
 
@@ -689,13 +671,12 @@ export default function PaperPage() {
 
           </section>
 
-
           {/* =================================================
               RIGHT COLUMN
-              AI
+              AI - DESKTOP ONLY
           ================================================= */}
 
-          <aside className="min-w-0 lg:col-span-3">
+          <aside className="hidden min-w-0 lg:col-span-3 lg:block">
 
             <div className="lg:sticky lg:top-5">
 
@@ -735,14 +716,13 @@ export default function PaperPage() {
 
                 </div>
 
-
-                {/* =================================================
-                    ONLY AI AREA SCROLLS
-                ================================================= */}
+                {/* AI CONTENT */}
 
                 <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
 
                   <div className="p-4">
+
+                    {/* Summary */}
 
                     <AIBlock
                       icon={Sparkles}
@@ -754,17 +734,9 @@ export default function PaperPage() {
                       />
                     </AIBlock>
 
+                    {/* Similar Papers removed */}
 
-                    {/* <AIBlock
-                      icon={BookOpen}
-                      title="Similar Papers"
-                      description="Discover related research"
-                    >
-                      <AISimilarPapers
-                        paperId={paper.id}
-                      />
-                    </AIBlock> */}
-
+                    {/* Reviewers */}
 
                     <AIBlock
                       icon={Users}
@@ -794,7 +766,6 @@ export default function PaperPage() {
     </main>
   );
 }
-
 
 /* ============================================================
    INFO ROW
@@ -827,7 +798,6 @@ function InfoRow({
     </div>
   );
 }
-
 
 /* ============================================================
    AI BLOCK
@@ -877,7 +847,6 @@ function AIBlock({
   );
 }
 
-
 /* ============================================================
    MOBILE AI
 ============================================================ */
@@ -912,7 +881,6 @@ function AIMobile({
 
       </div>
 
-
       <div className="p-4">
 
         <AIBlock
@@ -923,15 +891,7 @@ function AIMobile({
           <AISummary paperId={paperId} />
         </AIBlock>
 
-
-        {/* <AIBlock
-          icon={BookOpen}
-          title="Similar Papers"
-          description="Discover related research"
-        >
-          <AISimilarPapers paperId={paperId} />
-        </AIBlock> */}
-
+        {/* Similar Papers removed */}
 
         <AIBlock
           icon={Users}
