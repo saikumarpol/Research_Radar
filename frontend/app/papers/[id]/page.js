@@ -22,7 +22,7 @@ import {
 import usePaper from "@/hooks/usePaper";
 
 import AISummary from "@/components/AISummary";
-import AISimilarPapers from "@/components/AISimilarPapers";
+// import AISimilarPapers from "@/components/AISimilarPapers";
 import AIReviewers from "@/components/AIReviewers";
 
 import Loading from "@/components/Loading";
@@ -755,7 +755,7 @@ export default function PaperPage() {
                     </AIBlock>
 
 
-                    <AIBlock
+                    {/* <AIBlock
                       icon={BookOpen}
                       title="Similar Papers"
                       description="Discover related research"
@@ -763,7 +763,7 @@ export default function PaperPage() {
                       <AISimilarPapers
                         paperId={paper.id}
                       />
-                    </AIBlock>
+                    </AIBlock> */}
 
 
                     <AIBlock
@@ -924,13 +924,13 @@ function AIMobile({
         </AIBlock>
 
 
-        <AIBlock
+        {/* <AIBlock
           icon={BookOpen}
           title="Similar Papers"
           description="Discover related research"
         >
           <AISimilarPapers paperId={paperId} />
-        </AIBlock>
+        </AIBlock> */}
 
 
         <AIBlock
